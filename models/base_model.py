@@ -37,8 +37,12 @@ class BaseModel:
 
     def to_dict(self):
         """ converts the model object to a dict """
-        the_dict = self.__dict__
+        the_dict = {**self.__dict__}
         the_dict['__class__'] = self.__class__.__name__
+        # if type(the_dict['created_at']) == str:
+        #     the_dict['created_at'] = datetime(the_dict['created_at'])
+        # if type(the_dict['updated_at']) == str:
+        #     the_dict['updated_at'] = datetime(the_dict['created_at'])
         the_dict['created_at'] = self.created_at.isoformat()
         the_dict['updated_at'] = self.updated_at.isoformat()
 
