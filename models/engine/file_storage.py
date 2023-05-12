@@ -16,7 +16,8 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
-    valid_models = ['BaseModel']
+    valid_models = ['BaseModel', 'User',
+        'State', 'City', 'Amenity', 'Place', 'Review']
 
     def __init__(self):
         """ nothing to do here """
